@@ -3,6 +3,10 @@ print("Content-Type: text/html")
 print()
 import cgi
 form = cgi.FieldStorage()
+if 'id' in form:
+    pageId = form['id'].value
+else:
+    pageId = 'Welcome'
 
 print('''<!doctype html>
 <html>
@@ -11,7 +15,7 @@ print('''<!doctype html>
   <meta charset="utf-8">
 </head>
 <body>
-  <h1><a href="index.html">WEB</a></h1>
+  <h1><a href="index.py">WEB</a></h1>
   <ol>
     <li><a href="index.py?id=HTML">HTML</a></li>
     <li><a href="index.py?id=CSS">CSS</a></li>
@@ -22,4 +26,4 @@ print('''<!doctype html>
   </p>
 </body>
 </html>
-'''.format(title=form['id'].value))
+'''.format(title=pageId))
