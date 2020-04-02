@@ -16,5 +16,5 @@ opened_file = open('data/'+title,'w',encoding='utf-8')
 opened_file.write(description)
 opened_file.close()
 
-print("Location: index.py?id="+title)
+print("<script>window.location ='http://3.22.77.37/index.py?id="+title+"'</script>")
 print()
